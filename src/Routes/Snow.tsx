@@ -435,25 +435,26 @@ const SnowFlake = styled.div`
 `;
 
 const Button = styled.button`
+  font-family: 'GruppoRegular';
   width: 15rem;
   height: 5rem;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.05);
   border: none;
   color: white;
   border-radius: 1rem;
-  font-size: 18px;
+  font-size: 1.3rem;
   margin-left: 3vw;
 `;
 
-const Wrapper = styled.div`
-`;
+const Wrapper = styled.div``;
 
 const Text = styled.pre`
-  font-family: 'RajdhaniLight';
+  font-family: 'GruppoRegular';
   color: white;
-  font-size: 32px;
+  font-size: 2rem;
   margin-left: 3vw;
   margin-bottom: 5vh;
+  margin-top: 5vh;
 `;
 
 function Snow() {
@@ -472,14 +473,17 @@ function Snow() {
     <>
       <BackGround>
         <Wrapper>
-          <Text>Welcome!</Text>
+          <Text>Welcome !</Text>
           <Text>
-            You can add snowflakes here!
+            You can add snowflakes here.
             <br />
-            Try to add snowflakes as you want and get some rest!
+            Try adding as many snowflakes as you like
+            <br />
+            and get some rest.
           </Text>
-          <Button onClick={addSnowFlake}>Add Snow Flake!</Button>
-          <Button onClick={clearSnowFlakes}>Clear All Snow Flakes</Button>
+          <Button onClick={addSnowFlake}>Add Snowflake</Button>
+          <Button onClick={clearSnowFlakes}>Clear All Snowflakes</Button>
+          <Text style={{fontSize: '1.5rem'}}>&#40;If you press the &lt;f 1 1&gt; key, you will have a better experience&#41;</Text>
         </Wrapper>
         {SnowFlakeCount.map((value, index) => (
           <SnowFlake key={index} />

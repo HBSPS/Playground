@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import RajdhaniMedium from '../Fonts/Rajdhani-Medium.ttf';
-import RajdhaniLight from '../Fonts/Rajdhani-Light.ttf'
+import RajdhaniLight from '../Fonts/Rajdhani-Light.ttf';
+import GruppoRegular from '../Fonts/Gruppo-Regular.ttf';
 
 const GlobalStyle = createGlobalStyle`
   /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -16,7 +17,11 @@ const GlobalStyle = createGlobalStyle`
         font-family: 'RajdhaniLight';
         src: url(${RajdhaniLight}) format('truetype');
     }
-
+    @font-face {
+        font-family: 'GruppoRegular';
+        src: url(${GruppoRegular}) format('truetype');
+    }
+    
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
   a, abbr, acronym, address, big, cite, code,
