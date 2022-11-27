@@ -449,8 +449,9 @@ const Wrapper = styled.div`
 `;
 
 const Text = styled.pre`
+  font-family: 'RajdhaniLight';
   color: white;
-  font-size: 23px;
+  font-size: 32px;
   margin-left: 3vw;
   margin-bottom: 5vh;
 `;
