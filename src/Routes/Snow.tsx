@@ -436,22 +436,22 @@ const SnowFlake = styled.div`
 
 const Button = styled.button`
   font-family: 'GruppoRegular';
-  width: 15rem;
-  height: 5rem;
+  width: 20vh;
+  height: 5vh;
   background-color: rgba(255, 255, 255, 0.05);
   border: none;
   color: white;
-  border-radius: 1rem;
-  font-size: 1.3rem;
+  border-radius: 1vw;
+  font-size: 1.5vh;
   margin-left: 3vw;
 `;
 
 const Wrapper = styled.div``;
 
-const Text = styled.pre`
+const Text = styled.p`
   font-family: 'GruppoRegular';
   color: white;
-  font-size: 2rem;
+  font-size: 2vh;
   margin-left: 3vw;
   margin-bottom: 5vh;
   margin-top: 5vh;
@@ -483,7 +483,7 @@ function Snow() {
           </Text>
           <Button onClick={addSnowFlake}>Add Snowflake</Button>
           <Button onClick={clearSnowFlakes}>Clear All Snowflakes</Button>
-          <Text style={{fontSize: '1.5rem'}}>&#40;If you press the &lt;f 1 1&gt; key, you will have a better experience&#41;</Text>
+          <Text style={{fontSize: '1.5vh'}}>&#40;If you press the &lt;f 1 1&gt; key, you will have a better experience&#41;</Text>
         </Wrapper>
         {SnowFlakeCount.map((value, index) => (
           <SnowFlake key={index} />
