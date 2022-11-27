@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 
 const BackGround = styled.div`
@@ -459,6 +459,7 @@ const Text = styled.p`
 
 function Snow() {
   const [snowFlakeCount, setSnowFlakeCount] = useState(0);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const SnowFlakeCount = new Array(snowFlakeCount).fill(0);
 
   const addSnowFlake = () => {
@@ -468,6 +469,14 @@ function Snow() {
   const clearSnowFlakes = () => {
     setSnowFlakeCount(0);
   };
+
+  const handleResize = () => {
+    setScreenWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+  }, []);
 
   return (
     <>
@@ -483,7 +492,11 @@ function Snow() {
           </Text>
           <Button onClick={addSnowFlake}>Add Snowflake</Button>
           <Button onClick={clearSnowFlakes}>Clear All Snowflakes</Button>
-          <Text style={{fontSize: '1.5vh'}}>&#40;If you press the &lt;f 1 1&gt; key, you will have a better experience&#41;</Text>
+          {screenWidth > 1100 ? (
+            <Text style={{ fontSize: '1.5vh' }}>
+              &#40; If you press the &lt; f 1 1 &gt; key, you will have a better experience &#41;
+            </Text>
+          ) : null}
         </Wrapper>
         {SnowFlakeCount.map((value, index) => (
           <SnowFlake key={index} />
