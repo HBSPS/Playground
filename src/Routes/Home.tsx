@@ -9,7 +9,9 @@ const BackGround = styled.div`
   align-items: center;
 `;
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  overflow-x: hidden;
+`;
 
 const Text = styled.p`
   font-family: 'GruppoRegular';
@@ -23,13 +25,18 @@ const Text = styled.p`
 function Home() {
   return (
     <>
-      <BackGround>
-        <Wrapper>
-          <Text>Welcome!</Text>
-          <Text>Here is my playground!</Text>
-          <Text>This place is made up of my favorite things</Text>
-        </Wrapper>
-      </BackGround>
+      <Wrapper>
+        <BackGround>
+          <div>
+            <Text>Welcome!</Text>
+            <Text>Here is my playground!</Text>
+            <Text>This place is made up of my favorite things</Text>
+          </div>
+        </BackGround>
+        <BackGround style={{ background: 'black' }}>
+          <Text style={{ color: 'white' }}>Snow</Text>
+        </BackGround>
+      </Wrapper>
     </>
   );
 }
