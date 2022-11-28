@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const BackGround = styled.div`
   width: 100vw;
@@ -22,6 +23,18 @@ const Text = styled.p`
   margin-top: 5vh;
 `;
 
+const StyledLink = styled(Link)`
+  font-family: 'GruppoRegular';
+  padding: 1vh 3vh;
+  margin-left: 3vw;
+  border-radius: 1vh;
+  text-decoration: none;
+  font-size: 2vh;
+  color: black;
+  font-weight: bold;
+  background-color: white;
+`;
+
 function Home() {
   return (
     <>
@@ -30,11 +43,12 @@ function Home() {
           <div>
             <Text>Welcome!</Text>
             <Text>Here is my playground!</Text>
-            <Text>This place is made up of my favorite things</Text>
+            <Text>This place is made up of my favorite things.</Text>
           </div>
         </BackGround>
         <BackGround style={{ background: 'black' }}>
           <Text style={{ color: 'white' }}>Snow</Text>
+          <StyledLink to={'/snow'}>Try</StyledLink>
         </BackGround>
       </Wrapper>
     </>
