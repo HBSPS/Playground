@@ -8,10 +8,14 @@ const BackGround = styled.div`
   overflow: hidden;
   display: flex;
   align-items: center;
+  scroll-snap-align: start;
 `;
 
 const Wrapper = styled.div`
   overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  height: 100vh;
+  overflow-y: scroll;
 `;
 
 const Text = styled.p`
