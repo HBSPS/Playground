@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import scroll_down from '../Images/scroll_down.png'
 
 const BackGround = styled.div`
   width: 100vw;
@@ -9,6 +10,7 @@ const BackGround = styled.div`
   display: flex;
   align-items: center;
   scroll-snap-align: start;
+  position: relative;
 `;
 
 const Wrapper = styled.div`
@@ -39,6 +41,16 @@ const StyledLink = styled(Link)`
   background-color: white;
 `;
 
+const ScrollDownIcon = styled.div`
+  width: 10vh;
+  height: 10vh;
+  background-image: url(${scroll_down});
+  background-size: cover;
+  position: absolute;
+  left: 45vw;
+  bottom: 10vh;
+`;
+
 function Home() {
   return (
     <>
@@ -49,6 +61,7 @@ function Home() {
             <Text>Here is my playground!</Text>
             <Text>This place is made up of my favorite things.</Text>
           </div>
+          <ScrollDownIcon />
         </BackGround>
         <BackGround style={{ background: 'black' }}>
           <Text style={{ color: 'white' }}>Snow</Text>
