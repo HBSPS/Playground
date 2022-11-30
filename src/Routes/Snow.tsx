@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
 import P, { TextSize } from '../Components/_Atoms/P';
+import Button from '../Components/_Atoms/Button';
 
 const BackGround = styled.div`
   height: 100vh;
@@ -448,18 +449,6 @@ const SnowFlake = styled.div`
   }
 `;
 
-const Button = styled.button`
-  font-family: 'GruppoRegular';
-  width: 20vh;
-  height: 5vh;
-  background-color: rgba(255, 255, 255, 0.05);
-  border: none;
-  color: white;
-  border-radius: 1vw;
-  font-size: 2vh;
-  margin-left: 3vw;
-`;
-
 const Wrapper = styled.div``;
 
 function Snow() {
@@ -493,8 +482,8 @@ function Snow() {
           <P size={TextSize.big} text='Welcome!' />
           <P text='You can add snowflakes here.' />
           <P text='Try adding as many snowflakes as you like and get some rest.' />
-          <Button onClick={addSnowFlake}>Add Snowflake</Button>
-          <Button onClick={clearSnowFlakes}>Clear Snowflakes</Button>
+          <Button onClick={addSnowFlake} text='Add Snowflake' />
+          <Button onClick={clearSnowFlakes} text='Clear Snowflakes' />
           {screenWidth > 1100 ? (
             <P
               size={TextSize.small}
