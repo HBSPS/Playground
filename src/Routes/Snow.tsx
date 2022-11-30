@@ -3,6 +3,7 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
+import P, { TextSize } from '../Components/_Atoms/P';
 
 const BackGround = styled.div`
   height: 100vh;
@@ -461,15 +462,6 @@ const Button = styled.button`
 
 const Wrapper = styled.div``;
 
-const Text = styled.p`
-  font-family: 'GruppoRegular';
-  color: white;
-  font-size: 3vh;
-  margin-left: 3vw;
-  margin-bottom: 5vh;
-  margin-top: 5vh;
-`;
-
 function Snow() {
   const [snowFlakeCount, setSnowFlakeCount] = useState(0);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -494,22 +486,20 @@ function Snow() {
   return (
     <>
       <BackGround>
-        <BackButton to='/'><FontAwesomeIcon icon={faArrowLeft} /></BackButton>
+        <BackButton to='/'>
+          <FontAwesomeIcon icon={faArrowLeft} />
+        </BackButton>
         <Wrapper>
-          <Text>Welcome !</Text>
-          <Text>
-            You can add snowflakes here.
-            <br />
-            Try adding as many snowflakes as you like
-            <br />
-            and get some rest.
-          </Text>
+          <P size={TextSize.big} text='Welcome!' />
+          <P text='You can add snowflakes here.' />
+          <P text='Try adding as many snowflakes as you like and get some rest.' />
           <Button onClick={addSnowFlake}>Add Snowflake</Button>
           <Button onClick={clearSnowFlakes}>Clear Snowflakes</Button>
           {screenWidth > 1100 ? (
-            <Text style={{ fontSize: '2vh' }}>
-              &#40; If you press the &lt; f 1 1 &gt; key, you will have a better experience &#41;
-            </Text>
+            <P
+              size={TextSize.small}
+              text='&#40; If you press the &lt; f 1 1 &gt; key, you will have a better experience &#41;'
+            />
           ) : null}
         </Wrapper>
         {SnowFlakeCount.map((value, index) => (
