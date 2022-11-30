@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import scroll_down from '../Images/scroll_down.png'
+import scroll_down from '../Assets/Images/scroll_down.png'
 
 const BackGround = styled.div`
   width: 100vw;
