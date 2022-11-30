@@ -1,10 +1,8 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
-import { Link } from 'react-router-dom';
 import P, { TextSize } from '../Components/_Atoms/P';
 import Button from '../Components/_Atoms/Button';
+import HomeLink from '../Components/_Atoms/HomeLink';
 
 const BackGround = styled.div`
   height: 100vh;
@@ -15,15 +13,6 @@ const BackGround = styled.div`
   display: flex;
   align-items: center;
   position: relative;
-`;
-
-const BackButton = styled(Link)`
-  font-size: 2vh;
-  position: absolute;
-  left: 3vw;
-  top: 3vw;
-  background-color: none;
-  color: white;
 `;
 
 const SnowFall = keyframes`
@@ -475,9 +464,7 @@ function Snow() {
   return (
     <>
       <BackGround>
-        <BackButton to='/'>
-          <FontAwesomeIcon icon={faArrowLeft} />
-        </BackButton>
+        <HomeLink />
         <Wrapper>
           <P size={TextSize.big} text='Welcome!' />
           <P text='You can add snowflakes here.' />

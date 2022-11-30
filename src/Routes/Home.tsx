@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import scroll_down from '../Assets/Images/scroll_down.png'
 import P, { TextColor, TextSize } from '../Components/_Atoms/P';
+import StyledLink from '../Components/_Atoms/StyledLink';
 
 const BackGround = styled.div`
   width: 100vw;
@@ -19,18 +19,6 @@ const Wrapper = styled.div`
   scroll-snap-type: y mandatory;
   height: 100vh;
   overflow-y: scroll;
-`;
-
-const StyledLink = styled(Link)`
-  font-family: 'GruppoRegular';
-  padding: 1vh 3vh;
-  margin-left: 3vw;
-  border-radius: 1vh;
-  text-decoration: none;
-  font-size: 2vh;
-  color: black;
-  font-weight: bold;
-  background-color: white;
 `;
 
 const ScrollDownIcon = styled.div`
@@ -57,7 +45,7 @@ function Home() {
         </BackGround>
         <BackGround style={{ background: 'black' }}>
           <P size={TextSize.big} text='Snow' />
-          <StyledLink to={'/snow'}>Try</StyledLink>
+          <StyledLink to='/snow' color='black' text='Try' />
         </BackGround>
       </Wrapper>
     </>
