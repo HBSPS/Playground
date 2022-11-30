@@ -1,5 +1,8 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const BackGround = styled.div`
   height: 100vh;
@@ -9,6 +12,16 @@ const BackGround = styled.div`
   position: relative;
   display: flex;
   align-items: center;
+  position: relative;
+`;
+
+const BackButton = styled(Link)`
+  font-size: 2vh;
+  position: absolute;
+  left: 3vw;
+  top: 3vw;
+  background-color: none;
+  color: white;
 `;
 
 const SnowFall = keyframes`
@@ -442,7 +455,7 @@ const Button = styled.button`
   border: none;
   color: white;
   border-radius: 1vw;
-  font-size: 1.5vh;
+  font-size: 2vh;
   margin-left: 3vw;
 `;
 
@@ -451,7 +464,7 @@ const Wrapper = styled.div``;
 const Text = styled.p`
   font-family: 'GruppoRegular';
   color: white;
-  font-size: 2vh;
+  font-size: 3vh;
   margin-left: 3vw;
   margin-bottom: 5vh;
   margin-top: 5vh;
@@ -481,6 +494,7 @@ function Snow() {
   return (
     <>
       <BackGround>
+        <BackButton to='/'><FontAwesomeIcon icon={faArrowLeft} /></BackButton>
         <Wrapper>
           <Text>Welcome !</Text>
           <Text>
@@ -491,9 +505,9 @@ function Snow() {
             and get some rest.
           </Text>
           <Button onClick={addSnowFlake}>Add Snowflake</Button>
-          <Button onClick={clearSnowFlakes}>Clear All Snowflakes</Button>
+          <Button onClick={clearSnowFlakes}>Clear Snowflakes</Button>
           {screenWidth > 1100 ? (
-            <Text style={{ fontSize: '1.5vh' }}>
+            <Text style={{ fontSize: '2vh' }}>
               &#40; If you press the &lt; f 1 1 &gt; key, you will have a better experience &#41;
             </Text>
           ) : null}
