@@ -15,7 +15,7 @@ const BackGround = styled.div`
   position: relative;
 `;
 
-const Wrapper = styled.div`
+const HomeWrapper = styled.div`
   overflow-x: hidden;
   scroll-snap-type: y mandatory;
   height: 100vh;
@@ -35,7 +35,7 @@ const ScrollDownIcon = styled.div`
 function Home() {
   return (
     <>
-      <Wrapper>
+      <HomeWrapper>
         <BackGround>
           <HomeText />
           <ScrollDownIcon />
@@ -44,7 +44,7 @@ function Home() {
           <P size={TextSize.big}>Snow</P>
           <StyledLink to='/snow' color='black'>Try</StyledLink>
         </BackGround>
-      </Wrapper>
+      </HomeWrapper>
     </>
   );
 }

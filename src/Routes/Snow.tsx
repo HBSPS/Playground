@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import Button from '../Components/_Atoms/Button';
 import HomeLink from '../Components/_Atoms/HomeLink';
+import Wrapper from '../Components/_Atoms/Wrapper';
 import InfoText from '../Components/_Molecules/InfoText';
 import PlaygroundText from '../Components/_Molecules/PlaygroundText';
 
@@ -13,7 +14,6 @@ const BackGround = styled.div`
   position: relative;
   display: flex;
   align-items: center;
-  position: relative;
 `;
 
 const SnowFall = keyframes`
@@ -438,8 +438,6 @@ const SnowFlake = styled.div`
     filter: blur(1px);
   }
 `;
-
-const Wrapper = styled.div``;
 
 function Snow() {
   const [snowFlakeCount, setSnowFlakeCount] = useState(0);
