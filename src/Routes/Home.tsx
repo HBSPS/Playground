@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import scroll_down from '../Assets/Images/scroll_down.png'
-import P, { TextColor, TextSize } from '../Components/_Atoms/P';
+import P, { TextSize } from '../Components/_Atoms/P';
 import StyledLink from '../Components/_Atoms/StyledLink';
+import HomeText from '../Components/_Molecules/HomeText';
 
 const BackGround = styled.div`
   width: 100vw;
@@ -36,11 +37,7 @@ function Home() {
     <>
       <Wrapper>
         <BackGround>
-          <div>
-            <P size={TextSize.big} color={TextColor.blue}>Welcome!</P>
-            <P size={TextSize.big} color={TextColor.blue}>Here is my playground!</P>
-            <P size={TextSize.big} color={TextColor.blue}>This place is made up of my favorite things.</P>
-          </div>
+          <HomeText />
           <ScrollDownIcon />
         </BackGround>
         <BackGround style={{ background: 'black' }}>
