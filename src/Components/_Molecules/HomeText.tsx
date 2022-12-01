@@ -3,7 +3,7 @@ import P, { TextColor, TextSize } from '../_Atoms/P';
 
 const TextWrapper = styled.div``;
 
-const HomeText = () => {
+const HomeText = () => {    
   return (
     <TextWrapper>
       <P size={TextSize.big} color={TextColor.blue}>Welcome!</P>

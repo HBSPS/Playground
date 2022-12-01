@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import P, { TextSize } from '../Components/_Atoms/P';
 import Button from '../Components/_Atoms/Button';
 import HomeLink from '../Components/_Atoms/HomeLink';
+import InfoText from '../Components/_Molecules/InfoText';
 
 const BackGround = styled.div`
   height: 100vh;
@@ -442,7 +443,6 @@ const Wrapper = styled.div``;
 
 function Snow() {
   const [snowFlakeCount, setSnowFlakeCount] = useState(0);
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const SnowFlakeCount = new Array(snowFlakeCount).fill(0);
 
   const addSnowFlake = () => {
@@ -452,14 +452,6 @@ function Snow() {
   const clearSnowFlakes = () => {
     setSnowFlakeCount(0);
   };
-
-  const handleResize = () => {
-    setScreenWidth(window.innerWidth);
-  };
-
-  useEffect(() => {
-    window.addEventListener('resize', handleResize);
-  }, []);
 
   return (
     <>
@@ -471,11 +463,7 @@ function Snow() {
           <P>Try adding as many snowflakes as you like and get some rest.</P>
           <Button onClick={addSnowFlake}>Add Snowflake</Button>
           <Button onClick={clearSnowFlakes}>Clear Snowflakes</Button>
-          {screenWidth > 1100 ? (
-            <P size={TextSize.small}>
-              ( If you press the  f 1 1  key, you will have a better experience )
-            </P>
-          ) : null}
+          <InfoText />
         </Wrapper>
         {SnowFlakeCount.map((value, index) => (
           <SnowFlake key={index} />
