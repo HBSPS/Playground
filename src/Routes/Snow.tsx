@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
-import P, { TextSize } from '../Components/_Atoms/P';
 import Button from '../Components/_Atoms/Button';
 import HomeLink from '../Components/_Atoms/HomeLink';
 import InfoText from '../Components/_Molecules/InfoText';
+import PlaygroundText from '../Components/_Molecules/PlaygroundText';
 
 const BackGround = styled.div`
   height: 100vh;
@@ -458,9 +458,11 @@ function Snow() {
       <BackGround>
         <HomeLink />
         <Wrapper>
-          <P size={TextSize.big}>Welcome!</P>
-          <P>You can add snowflakes here.</P>
-          <P>Try adding as many snowflakes as you like and get some rest.</P>
+          <PlaygroundText
+            title='Welcome!'
+            text1='You can add snowflakes here.'
+            text2='Try adding as many snowflakes as you like and get some rest.'
+          />
           <Button onClick={addSnowFlake}>Add Snowflake</Button>
           <Button onClick={clearSnowFlakes}>Clear Snowflakes</Button>
           <InfoText />
