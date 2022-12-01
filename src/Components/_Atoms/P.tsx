@@ -25,18 +25,18 @@ const DefaultText = styled.p`
 `;
 
 interface IProps extends PropsWithChildren {
-  text?: string;
   color?: string;
   size?: string;
 }
 
-function P({ size, color, text }: IProps) {
+const P = (props: IProps) => {
+  const { size, color, children } = props;
   const style = {
     color: color,
     fontSize: size,
   };
 
-  return <DefaultText style={style}>{text}</DefaultText>;
+  return <DefaultText style={style}>{children}</DefaultText>;
 }
 
 export default P;

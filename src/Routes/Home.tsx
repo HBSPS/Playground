@@ -37,15 +37,15 @@ function Home() {
       <Wrapper>
         <BackGround>
           <div>
-            <P size={TextSize.big} color={TextColor.blue} text='Welcome!' />
-            <P size={TextSize.big} color={TextColor.blue} text='Here is my playground!' />
-            <P size={TextSize.big} color={TextColor.blue} text='This place is made up of my favorite things.' />
+            <P size={TextSize.big} color={TextColor.blue}>Welcome!</P>
+            <P size={TextSize.big} color={TextColor.blue}>Here is my playground!</P>
+            <P size={TextSize.big} color={TextColor.blue}>This place is made up of my favorite things.</P>
           </div>
           <ScrollDownIcon />
         </BackGround>
         <BackGround style={{ background: 'black' }}>
-          <P size={TextSize.big} text='Snow' />
-          <StyledLink to='/snow' color='black' text='Try' />
+          <P size={TextSize.big}>Snow</P>
+          <StyledLink to='/snow' color='black'>Try</StyledLink>
         </BackGround>
       </Wrapper>
     </>

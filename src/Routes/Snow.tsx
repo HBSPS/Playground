@@ -466,16 +466,15 @@ function Snow() {
       <BackGround>
         <HomeLink />
         <Wrapper>
-          <P size={TextSize.big} text='Welcome!' />
-          <P text='You can add snowflakes here.' />
-          <P text='Try adding as many snowflakes as you like and get some rest.' />
-          <Button onClick={addSnowFlake} text='Add Snowflake' />
-          <Button onClick={clearSnowFlakes} text='Clear Snowflakes' />
+          <P size={TextSize.big}>Welcome!</P>
+          <P>You can add snowflakes here.</P>
+          <P>Try adding as many snowflakes as you like and get some rest.</P>
+          <Button onClick={addSnowFlake}>Add Snowflake</Button>
+          <Button onClick={clearSnowFlakes}>Clear Snowflakes</Button>
           {screenWidth > 1100 ? (
-            <P
-              size={TextSize.small}
-              text='&#40; If you press the &lt; f 1 1 &gt; key, you will have a better experience &#41;'
-            />
+            <P size={TextSize.small}>
+              ( If you press the  f 1 1  key, you will have a better experience )
+            </P>
           ) : null}
         </Wrapper>
         {SnowFlakeCount.map((value, index) => (

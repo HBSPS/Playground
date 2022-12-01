@@ -16,16 +16,16 @@ const DefaultLink = styled(Link)`
 `;
 
 interface IProps extends PropsWithChildren {
-  text?: string;
   to: string;
   color?: string;
 }
 
-function StyledLink({ text, to, color = 'white' }: IProps) {
+const StyledLink = (props: IProps) => {
+  const { children, to, color } = props;
   const style = {
     color: color,
   };
-  return <DefaultLink to={to} style={style}>{text}</DefaultLink>
+  return <DefaultLink to={to} style={style}>{children}</DefaultLink>
 }
 
 export default StyledLink;

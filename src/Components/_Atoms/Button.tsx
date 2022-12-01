@@ -13,12 +13,12 @@ const DefaultButton = styled.button`
 `;
 
 interface IProps extends PropsWithChildren {
-    text?: string;
-    onClick(event: React.MouseEvent<HTMLButtonElement>): void
+  onClick(event: React.MouseEvent<HTMLButtonElement>): void;
 }
 
-function Button({text, onClick}: IProps) {
-    return <DefaultButton onClick={onClick}>{text}</DefaultButton>
-}
+const Button = (props: IProps) => {
+  const { children, onClick } = props;
+  return <DefaultButton onClick={onClick}>{children}</DefaultButton>;
+};
 
 export default Button;
