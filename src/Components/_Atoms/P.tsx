@@ -1,42 +1,42 @@
 import { PropsWithChildren } from 'react';
 import styled from 'styled-components';
 
-export enum TextColor {
-  default = 'white',
-
-  blue = '#0984e3',
-}
-
-export enum TextSize {
-  default = '3vh',
-  
-  big = '5vh',
-  small = '2vh',
-}
-
 const DefaultText = styled.p`
   font-family: 'GruppoRegular';
   margin-left: 3vw;
   margin-bottom: 5vh;
   margin-top: 5vh;
 
-  font-size: ${TextSize.default};
-  color: ${TextColor.default};
+  font-size: 3vh;
+  color: white;
 `;
 
-interface IProps extends PropsWithChildren {
-  color?: string;
-  size?: string;
-}
+const BlueText = styled(DefaultText)`
+  color: #0984e3;
+`;
 
-const P = (props: IProps) => {
-  const { size, color, children } = props;
-  const style = {
-    color: color,
-    fontSize: size,
-  };
+const BigText = styled(DefaultText)`
+  font-size: 5vh;
+`;
 
-  return <DefaultText style={style}>{children}</DefaultText>;
-}
+const SmallText = styled(DefaultText)`
+  font-size: 2vh;
+`;
 
-export default P;
+const BigBlue = styled(DefaultText)`
+  font-size: 5vh;
+  color: #0984e3;
+`;
+
+const PMain = (props: PropsWithChildren) => {
+  const { children } = props;
+
+  return <DefaultText>{children}</DefaultText>;
+};
+
+export const P = Object.assign(PMain, {
+  Blue: BlueText,
+  Big: BigText,
+  BigBlue: BigBlue,
+  Small: SmallText,
+});

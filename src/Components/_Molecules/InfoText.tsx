@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import P, { TextSize } from '../_Atoms/P';
+import { P } from '../_Atoms/P';
 
 const InfoText = () => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -13,7 +13,7 @@ const InfoText = () => {
   }, []);
 
   return screenWidth > 1100 ? (
-    <P size={TextSize.small}>{'( If you press the f 1 1 key, you will have a better experience )'}</P>
+    <P.Small>{'( If you press the f 1 1 key, you will have a better experience )'}</P.Small>
   ) : null;
 };
 

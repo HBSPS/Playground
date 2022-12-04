@@ -1,5 +1,5 @@
 import { PropsWithChildren } from 'react';
-import P, { TextSize } from '../_Atoms/P';
+import { P } from '../_Atoms/P';
 
 interface IProps extends PropsWithChildren {
   title: string;
@@ -10,7 +10,7 @@ interface IProps extends PropsWithChildren {
 const PlaygroundText = (props: IProps) => {
   return (
     <>
-      <P size={TextSize.big}>{props.title}</P>
+      <P.Big>{props.title}</P.Big>
       <P>{props.text1}</P>
       <P>{props.text2}</P>
     </>

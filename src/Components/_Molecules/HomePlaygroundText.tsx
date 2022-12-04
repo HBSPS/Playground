@@ -1,5 +1,5 @@
 import { PropsWithChildren } from 'react';
-import P, { TextSize } from '../_Atoms/P';
+import { P } from '../_Atoms/P';
 import StyledLink from '../_Atoms/StyledLink';
 
 interface IProps extends PropsWithChildren {
@@ -11,7 +11,7 @@ interface IProps extends PropsWithChildren {
 const HomePlaygroundText = (props: IProps) => {
   return (
     <>
-      <P size={TextSize.big}>{props.title}</P>
+      <P.Big>{props.title}</P.Big>
       <StyledLink to={props.to} color={props.buttonColor}>Try</StyledLink>
     </>
   );
