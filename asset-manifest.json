@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/Playground/static/js/main.b6beb9cc.js",
+    "main.js": "/Playground/static/js/main.405b385d.js",
     "static/media/Rajdhani-Medium.ttf": "/Playground/static/media/Rajdhani-Medium.69a9f7bccb45c01931a2.ttf",
     "static/media/Rajdhani-Light.ttf": "/Playground/static/media/Rajdhani-Light.7f948ddb3029f1193092.ttf",
     "static/media/Gruppo-Regular.ttf": "/Playground/static/media/Gruppo-Regular.2393675620be8c54ff95.ttf",
     "index.html": "/Playground/index.html",
-    "main.b6beb9cc.js.map": "/Playground/static/js/main.b6beb9cc.js.map"
+    "main.405b385d.js.map": "/Playground/static/js/main.405b385d.js.map"
   },
   "entrypoints": [
-    "static/js/main.b6beb9cc.js"
+    "static/js/main.405b385d.js"
   ]
 }
