@@ -12,11 +12,11 @@ const DefaultBackground = styled.div`
   scroll-snap-align: start;
 `;
 
-const BlackBackground = styled(DefaultBackground)`
+const Black = styled(DefaultBackground)`
   background-color: black;
 `;
 
-const SnowBackground = styled(DefaultBackground)`
+const Snow = styled(DefaultBackground)`
   background: linear-gradient(#123, #111);
 `;
 
@@ -24,6 +24,18 @@ const BackGroundMain = (props: PropsWithChildren) => {
   const { children } = props;
 
   return <DefaultBackground>{children}</DefaultBackground>;
+};
+
+const SnowBackground = (props: PropsWithChildren) => {
+  const { children } = props;
+
+  return <Snow>{children}</Snow>;
+};
+
+const BlackBackground = (props: PropsWithChildren) => {
+  const { children } = props;
+
+  return <Black>{children}</Black>;
 };
 
 export const BackGround = Object.assign(BackGroundMain, {

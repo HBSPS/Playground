@@ -4,8 +4,7 @@ import { BackGround } from '../_Atoms/BackGround';
 import Button from '../_Atoms/Button';
 import HomeLink from '../_Atoms/HomeLink';
 import Wrapper from '../_Atoms/Wrapper';
-import InfoText from '../_Modules/InfoText';
-import PlaygroundText from '../_Modules/PlaygroundText';
+import { PlaygroundText } from '../_Modules/PlaygroundText';
 
 const SnowFall = keyframes`
   0% {
@@ -447,14 +446,14 @@ function Snow() {
       <BackGround.Snow>
         <HomeLink />
         <Wrapper>
-          <PlaygroundText
-            title='Welcome!'
-            text1='You can add snowflakes here.'
-            text2='Try adding as many snowflakes as you like and get some rest.'
-          />
-          <Button onClick={addSnowFlake}>Add Snowflake</Button>
-          <Button onClick={clearSnowFlakes}>Clear Snowflakes</Button>
-          <InfoText />
+          <PlaygroundText.Title>Welcome!</PlaygroundText.Title>
+          <PlaygroundText>You can add snowflakes here.</PlaygroundText>
+          <PlaygroundText>Try adding as many snowflakes as you like and get some rest.</PlaygroundText>
+          <>
+            <Button onClick={addSnowFlake}>Add Snowflake</Button>
+            <Button onClick={clearSnowFlakes}>Clear Snowflakes</Button>
+          </>
+          <PlaygroundText.Info />
         </Wrapper>
         {SnowFlakeCount.map((value, index) => (
           <SnowFlake key={index} />

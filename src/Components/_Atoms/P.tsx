@@ -11,10 +11,6 @@ const DefaultText = styled.p`
   color: white;
 `;
 
-const BlueText = styled(DefaultText)`
-  color: #0984e3;
-`;
-
 const BigText = styled(DefaultText)`
   font-size: 5vh;
 `;
@@ -23,20 +19,42 @@ const SmallText = styled(DefaultText)`
   font-size: 2vh;
 `;
 
-const BigBlue = styled(DefaultText)`
-  font-size: 5vh;
-  color: #0984e3;
-`;
+export enum PColor {
+  blue = '#0984e3',
+}
 
-const PMain = (props: PropsWithChildren) => {
-  const { children } = props;
+interface IProps extends PropsWithChildren {
+  color?: string;
+}
 
-  return <DefaultText>{children}</DefaultText>;
+const PRegular = (props: IProps) => {
+  const { children, color } = props;
+  const style = {
+    color: color,
+  };
+
+  return <DefaultText style={style}>{children}</DefaultText>;
 };
 
-export const P = Object.assign(PMain, {
-  Blue: BlueText,
-  Big: BigText,
-  BigBlue: BigBlue,
-  Small: SmallText,
+const PBig = (props: IProps) => {
+  const { children, color } = props;
+  const style = {
+    color: color,
+  };
+
+  return <BigText style={style}>{children}</BigText>;
+};
+
+const PSmall = (props: IProps) => {
+  const { children, color } = props;
+  const style = {
+    color: color,
+  };
+
+  return <SmallText style={style}>{children}</SmallText>;
+};
+
+export const P = Object.assign(PRegular, {
+  Big: PBig,
+  Small: PSmall,
 });
