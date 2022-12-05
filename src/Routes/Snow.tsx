@@ -1,20 +1,11 @@
 import { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
+import { BackGround } from '../Components/_Atoms/BackGround';
 import Button from '../Components/_Atoms/Button';
 import HomeLink from '../Components/_Atoms/HomeLink';
 import Wrapper from '../Components/_Atoms/Wrapper';
 import InfoText from '../Components/_Molecules/InfoText';
 import PlaygroundText from '../Components/_Molecules/PlaygroundText';
-
-const BackGround = styled.div`
-  height: 100vh;
-  width: 100vw;
-  background: linear-gradient(#123, #111);
-  overflow: hidden;
-  position: relative;
-  display: flex;
-  align-items: center;
-`;
 
 const SnowFall = keyframes`
   0% {
@@ -453,7 +444,7 @@ function Snow() {
 
   return (
     <>
-      <BackGround>
+      <BackGround.Snow>
         <HomeLink />
         <Wrapper>
           <PlaygroundText
@@ -468,7 +459,7 @@ function Snow() {
         {SnowFlakeCount.map((value, index) => (
           <SnowFlake key={index} />
         ))}
-      </BackGround>
+      </BackGround.Snow>
     </>
   );
 }
