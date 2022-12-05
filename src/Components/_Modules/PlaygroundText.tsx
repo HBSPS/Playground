@@ -1,5 +1,6 @@
-import { PropsWithChildren, useEffect, useState } from 'react';
+import { PropsWithChildren } from 'react';
 import { P } from '../_Atoms/P';
+import useWindowWith from '../../Hooks/useWindowWidth';
 
 interface IProps extends PropsWithChildren {
   color?: string;
@@ -14,15 +15,7 @@ const PlaygroundTextTitle = (props: IProps) => {
 };
 
 const PlaygroundTextInfo = (props: IProps) => {
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-
-  const handleResize = () => {
-    setScreenWidth(window.innerWidth);
-  };
-
-  useEffect(() => {
-    window.addEventListener('resize', handleResize);
-  }, []);
+  const screenWidth = useWindowWith();
 
   return screenWidth > 1100 ? (
     <P.Small {...props}>{'( If you press the f 1 1 key, you will have a better experience )'}</P.Small>
@@ -33,5 +26,3 @@ export const PlaygroundText = Object.assign(PlaygroundTextContent, {
   Title: PlaygroundTextTitle,
   Info: PlaygroundTextInfo,
 });
-
-export default PlaygroundText;

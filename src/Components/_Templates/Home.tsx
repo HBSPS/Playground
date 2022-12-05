@@ -11,7 +11,7 @@ const HomeWrapper = styled.div`
   overflow-y: scroll;
 `;
 
-function Home() {
+const Home = () => {
   return (
     <>
       <HomeWrapper>

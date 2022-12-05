@@ -1,10 +1,10 @@
-import { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { BackGround } from '../_Atoms/BackGround';
 import Button from '../_Atoms/Button';
 import HomeLink from '../_Atoms/HomeLink';
 import Wrapper from '../_Atoms/Wrapper';
 import { PlaygroundText } from '../_Modules/PlaygroundText';
+import useSnowFlake from '../../Hooks/useSnowFlake';
 
 const SnowFall = keyframes`
   0% {
@@ -429,17 +429,8 @@ const SnowFlake = styled.div`
   }
 `;
 
-function Snow() {
-  const [snowFlakeCount, setSnowFlakeCount] = useState(0);
-  const SnowFlakeCount = new Array(snowFlakeCount).fill(0);
-
-  const addSnowFlake = () => {
-    setSnowFlakeCount((prev) => prev + 1);
-  };
-
-  const clearSnowFlakes = () => {
-    setSnowFlakeCount(0);
-  };
+const Snow = () => {
+  const { SnowFlakeCount, addSnowFlake, clearSnowFlakes } = useSnowFlake();
 
   return (
     <>

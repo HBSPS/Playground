@@ -28,30 +28,27 @@ interface IProps extends PropsWithChildren {
 }
 
 const PRegular = (props: IProps) => {
-  const { children, color } = props;
   const style = {
-    color: color,
+    color: props.color,
   };
 
-  return <DefaultText style={style}>{children}</DefaultText>;
+  return <DefaultText style={style}>{props.children}</DefaultText>;
 };
 
 const PBig = (props: IProps) => {
-  const { children, color } = props;
   const style = {
-    color: color,
+    color: props.color,
   };
 
-  return <BigText style={style}>{children}</BigText>;
+  return <BigText style={style}>{props.children}</BigText>;
 };
 
 const PSmall = (props: IProps) => {
-  const { children, color } = props;
   const style = {
-    color: color,
+    color: props.color,
   };
 
-  return <SmallText style={style}>{children}</SmallText>;
+  return <SmallText style={style}>{props.children}</SmallText>;
 };
 
 export const P = Object.assign(PRegular, {
