@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { BackGround } from '../_Atoms/BackGround';
 import ScrollDownIcon from '../_Atoms/ScrollDownIcon';
-import HomePlaygroundText from '../_Modules/HomePlaygroundText';
+import { HomePlayground } from '../_Modules/HomePlayground';
 import HomeText from '../_Modules/HomeText';
 
 const HomeWrapper = styled.div`
@@ -20,7 +20,8 @@ const Home = () => {
           <ScrollDownIcon />
         </BackGround>
         <BackGround.Black>
-          <HomePlaygroundText title='Snow' buttonColor='black' to='/snow' />
+          <HomePlayground.Title>Snow</HomePlayground.Title>
+          <HomePlayground.Link color='black' to='/snow' />
         </BackGround.Black>
       </HomeWrapper>
     </>

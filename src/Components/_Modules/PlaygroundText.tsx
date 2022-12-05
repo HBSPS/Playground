@@ -1,20 +1,15 @@
-import { PropsWithChildren } from 'react';
-import { P } from '../_Atoms/P';
+import { P, PProps } from '../_Atoms/P';
 import useWindowWith from '../../Hooks/useWindowWidth';
 
-interface IProps extends PropsWithChildren {
-  color?: string;
-}
-
-const PlaygroundTextContent = (props: IProps) => {
+const PlaygroundTextContent = (props: PProps) => {
   return <P {...props}>{props.children}</P>;
 };
 
-const PlaygroundTextTitle = (props: IProps) => {
+const PlaygroundTextTitle = (props: PProps) => {
   return <P.Big {...props}>{props.children}</P.Big>;
 };
 
-const PlaygroundTextInfo = (props: IProps) => {
+const PlaygroundTextInfo = (props: PProps) => {
   const screenWidth = useWindowWith();
 
   return screenWidth > 1100 ? (

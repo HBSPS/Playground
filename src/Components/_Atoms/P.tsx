@@ -23,11 +23,11 @@ export enum PColor {
   blue = '#0984e3',
 }
 
-interface IProps extends PropsWithChildren {
+export interface PProps extends PropsWithChildren {
   color?: string;
 }
 
-const PRegular = (props: IProps) => {
+const PRegular = (props: PProps) => {
   const style = {
     color: props.color,
   };
@@ -35,7 +35,7 @@ const PRegular = (props: IProps) => {
   return <DefaultText style={style}>{props.children}</DefaultText>;
 };
 
-const PBig = (props: IProps) => {
+const PBig = (props: PProps) => {
   const style = {
     color: props.color,
   };
@@ -43,7 +43,7 @@ const PBig = (props: IProps) => {
   return <BigText style={style}>{props.children}</BigText>;
 };
 
-const PSmall = (props: IProps) => {
+const PSmall = (props: PProps) => {
   const style = {
     color: props.color,
   };

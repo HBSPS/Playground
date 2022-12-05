@@ -15,12 +15,12 @@ const DefaultLink = styled(Link)`
   color: ${(props) => props.color};
 `;
 
-interface IProps extends PropsWithChildren {
+export interface StyledLinkProps extends PropsWithChildren {
   to: string;
   color?: string;
 }
 
-const StyledLink = (props: IProps) => {
+const StyledLink = (props: StyledLinkProps) => {
   const { children, to, color } = props;
   const style = {
     color: color,
