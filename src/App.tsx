@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './Routes/Home';
-import Snow from './Routes/Snow';
+import Home from './Components/_Templates/Home';
+import Snow from './Components/_Templates/Snow';
 
 function App() {
   return (

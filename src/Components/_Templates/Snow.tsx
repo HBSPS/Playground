@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
-import { BackGround } from '../Components/_Atoms/BackGround';
-import Button from '../Components/_Atoms/Button';
-import HomeLink from '../Components/_Atoms/HomeLink';
-import Wrapper from '../Components/_Atoms/Wrapper';
-import InfoText from '../Components/_Molecules/InfoText';
-import PlaygroundText from '../Components/_Molecules/PlaygroundText';
+import { BackGround } from '../_Atoms/BackGround';
+import Button from '../_Atoms/Button';
+import HomeLink from '../_Atoms/HomeLink';
+import Wrapper from '../_Atoms/Wrapper';
+import InfoText from '../_Modules/InfoText';
+import PlaygroundText from '../_Modules/PlaygroundText';
 
 const SnowFall = keyframes`
   0% {

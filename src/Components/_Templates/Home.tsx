@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { BackGround } from '../Components/_Atoms/BackGround';
-import ScrollDownIcon from '../Components/_Atoms/ScrollDownIcon';
-import HomePlaygroundText from '../Components/_Molecules/HomePlaygroundText';
-import HomeText from '../Components/_Molecules/HomeText';
+import { BackGround } from '../_Atoms/BackGround';
+import ScrollDownIcon from '../_Atoms/ScrollDownIcon';
+import HomePlaygroundText from '../_Modules/HomePlaygroundText';
+import HomeText from '../_Modules/HomeText';
 
 const HomeWrapper = styled.div`
   overflow-x: hidden;
