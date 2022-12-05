@@ -1,28 +1,22 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import { useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
-import { Link } from 'react-router-dom';
 
-const BackGround = styled.div`
-  height: 100vh;
-  width: 100vw;
-  background: linear-gradient(#123, #111);
-  overflow: hidden;
-  position: relative;
-  display: flex;
-  align-items: center;
-  position: relative;
-`;
+interface IProps {
+  SnowFlakeCount: number[];
+}
 
-const BackButton = styled(Link)`
-  font-size: 2vh;
-  position: absolute;
-  left: 3vw;
-  top: 3vw;
-  background-color: none;
-  color: white;
-`;
+const SnowFlakes = (props: IProps) => {
+  const SnowFlakeCount = props.SnowFlakeCount;
+
+  return (
+    <>
+      {SnowFlakeCount.map((value, index) => (
+        <SingleSnowFlake key={index} />
+      ))}
+    </>
+  );
+};
+
+export default SnowFlakes;
 
 const SnowFall = keyframes`
   0% {
@@ -33,7 +27,7 @@ const SnowFall = keyframes`
   }
 `;
 
-const SnowFlake = styled.div`
+const SingleSnowFlake = styled.div`
   --size: 1vw;
   width: var(--size);
   height: var(--size);
@@ -446,78 +440,3 @@ const SnowFlake = styled.div`
     filter: blur(1px);
   }
 `;
-
-const Button = styled.button`
-  font-family: 'GruppoRegular';
-  width: 20vh;
-  height: 5vh;
-  background-color: rgba(255, 255, 255, 0.05);
-  border: none;
-  color: white;
-  border-radius: 1vw;
-  font-size: 2vh;
-  margin-left: 3vw;
-`;
-
-const Wrapper = styled.div``;
-
-const Text = styled.p`
-  font-family: 'GruppoRegular';
-  color: white;
-  font-size: 3vh;
-  margin-left: 3vw;
-  margin-bottom: 5vh;
-  margin-top: 5vh;
-`;
-
-function Snow() {
-  const [snowFlakeCount, setSnowFlakeCount] = useState(0);
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-  const SnowFlakeCount = new Array(snowFlakeCount).fill(0);
-
-  const addSnowFlake = () => {
-    setSnowFlakeCount((prev) => prev + 1);
-  };
-
-  const clearSnowFlakes = () => {
-    setSnowFlakeCount(0);
-  };
-
-  const handleResize = () => {
-    setScreenWidth(window.innerWidth);
-  };
-
-  useEffect(() => {
-    window.addEventListener('resize', handleResize);
-  }, []);
-
-  return (
-    <>
-      <BackGround>
-        <BackButton to='/'><FontAwesomeIcon icon={faArrowLeft} /></BackButton>
-        <Wrapper>
-          <Text>Welcome !</Text>
-          <Text>
-            You can add snowflakes here.
-            <br />
-            Try adding as many snowflakes as you like
-            <br />
-            and get some rest.
-          </Text>
-          <Button onClick={addSnowFlake}>Add Snowflake</Button>
-          <Button onClick={clearSnowFlakes}>Clear Snowflakes</Button>
-          {screenWidth > 1100 ? (
-            <Text style={{ fontSize: '2vh' }}>
-              &#40; If you press the &lt; f 1 1 &gt; key, you will have a better experience &#41;
-            </Text>
-          ) : null}
-        </Wrapper>
-        {SnowFlakeCount.map((value, index) => (
-          <SnowFlake key={index} />
-        ))}
-      </BackGround>
-    </>
-  );
-}
-
-export default Snow;

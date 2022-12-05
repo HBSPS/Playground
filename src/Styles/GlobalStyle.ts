@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
-import RajdhaniMedium from '../Fonts/Rajdhani-Medium.ttf';
-import RajdhaniLight from '../Fonts/Rajdhani-Light.ttf';
-import GruppoRegular from '../Fonts/Gruppo-Regular.ttf';
+import RajdhaniMedium from '../Assets/Fonts/Rajdhani-Medium.ttf';
+import RajdhaniLight from '../Assets/Fonts/Rajdhani-Light.ttf';
+import GruppoRegular from '../Assets/Fonts/Gruppo-Regular.ttf';
 
 const GlobalStyle = createGlobalStyle`
   /* http://meyerweb.com/eric/tools/css/reset/ 
