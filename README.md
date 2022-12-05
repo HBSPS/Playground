@@ -2,12 +2,11 @@
 
 <a href="https://HBSPS.github.io/Playground" target="_blank">Try!</a>
 
-### This is my Playground!
+#### This is my Playground!
 
-### This place is made up of my favorite things.
+#### This place is made up of my favorite things.
+
 <br>
-
----
 
 ## The reason why I made this page
 
