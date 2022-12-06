@@ -20,6 +20,10 @@ const Snow = styled(DefaultBackground)`
   background: linear-gradient(#123, #111);
 `;
 
+const Beach = styled(DefaultBackground)`
+  background-color: #edddc5;
+`;
+
 const BackGroundMain = (props: PropsWithChildren) => {
   const { children } = props;
 
@@ -38,7 +42,14 @@ const BlackBackground = (props: PropsWithChildren) => {
   return <Black>{children}</Black>;
 };
 
+const BeachBackground = (props: PropsWithChildren) => {
+  const { children } = props;
+
+  return <Beach>{children}</Beach>;
+};
+
 export const BackGround = Object.assign(BackGroundMain, {
   Black: BlackBackground,
   Snow: SnowBackground,
+  Beach: BeachBackground,
 });

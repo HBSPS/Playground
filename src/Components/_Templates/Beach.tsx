@@ -1,5 +1,11 @@
+import { BackGround } from '../_Atoms/BackGround';
+
 const Beach = () => {
-  return <h1>This is Beach!</h1>;
+  return (
+    <>
+      <BackGround.Beach></BackGround.Beach>
+    </>
+  );
 };
 
 export default Beach;
