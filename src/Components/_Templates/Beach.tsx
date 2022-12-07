@@ -1,9 +1,12 @@
 import { BackGround } from '../_Atoms/BackGround';
+import HomeLink from '../_Atoms/HomeLink';
 
 const Beach = () => {
   return (
     <>
-      <BackGround.Beach></BackGround.Beach>
+      <BackGround.Beach>
+        <HomeLink color='black'/>
+      </BackGround.Beach>
     </>
   );
 };
