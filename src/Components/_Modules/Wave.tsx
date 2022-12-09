@@ -5,6 +5,7 @@ const Ocean = styled.div`
   width: 100vw;
   height: 10vh;
   background: linear-gradient(#4ea292, #7ab3a7);
+  z-index: -1;
 `;
 
 const WaveMovement = keyframes`
