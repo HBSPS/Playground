@@ -1,5 +1,5 @@
 import { P, PColor } from '../_Atoms/P';
-import Wrapper from '../_Atoms/Wrapper';
+import { Wrapper } from '../_Atoms/Wrapper';
 
 const HomeText = () => {
   return (

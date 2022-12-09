@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import Wrapper from '../_Atoms/Wrapper';
+import { Wrapper } from '../_Atoms/Wrapper';
 
 const Ocean = styled.div`
   width: 100vw;
