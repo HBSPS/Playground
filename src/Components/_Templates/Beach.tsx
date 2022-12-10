@@ -3,12 +3,14 @@ import HomeLink from '../_Atoms/HomeLink';
 import { PlaygroundText } from '../_Modules/PlaygroundText';
 import Wave from '../_Modules/Wave';
 import { Wrapper } from '../_Atoms/Wrapper';
+import BeachSky from '../_Modules/BeachSky';
 
 const Beach = () => {
   return (
     <>
       <BackGround.Beach>
         <HomeLink color='black' />
+        <BeachSky />
         <Wave />
         <Wrapper.Absolute>
           <PlaygroundText.Title color='black'>Welcome!</PlaygroundText.Title>
