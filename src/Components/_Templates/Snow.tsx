@@ -1,5 +1,5 @@
 import { BackGround } from '../_Atoms/BackGround';
-import Button from '../_Atoms/Button';
+import { Button } from '../_Atoms/Button';
 import HomeLink from '../_Atoms/HomeLink';
 import { Wrapper } from '../_Atoms/Wrapper';
 import { PlaygroundText } from '../_Modules/PlaygroundText';
