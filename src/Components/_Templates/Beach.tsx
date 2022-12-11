@@ -16,6 +16,7 @@ const Beach = () => {
           <PlaygroundText.Title color='black'>Welcome!</PlaygroundText.Title>
           <PlaygroundText color='black'>You can write anything here.</PlaygroundText>
           <PlaygroundText color='black'>Try letting the waves erase it.</PlaygroundText>
+          <PlaygroundText.Info color='black'/>
         </Wrapper.Absolute>
       </BackGround.Beach>
     </>
