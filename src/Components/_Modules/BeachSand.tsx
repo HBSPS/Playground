@@ -81,13 +81,27 @@ const BeachSand = () => {
   const startTouch = useCallback((event: TouchEvent) => {
     event.preventDefault();
 
-    if (!canvasRef.current) {
-      return;
-    }
+    if (!canvasRef.current) return;
     const canvas: HTMLCanvasElement = canvasRef.current;
 
     var touch = event.touches[0];
     var mouseEvent = new MouseEvent('mousedown', {
+      clientX: touch.clientX,
+      clientY: touch.clientY,
+    });
+
+    canvas.dispatchEvent(mouseEvent);
+  }, []);
+
+  const touch = useCallback((event: TouchEvent) => {
+    event.preventDefault();
+
+    if (!canvasRef.current) return;
+
+    const canvas: HTMLCanvasElement = canvasRef.current;
+
+    var touch = event.touches[0];
+    var mouseEvent = new MouseEvent('mousemove', {
       clientX: touch.clientX,
       clientY: touch.clientY,
     });
@@ -107,6 +121,7 @@ const BeachSand = () => {
     Canvas.addEventListener('mouseleave', exitPaint);
 
     Canvas.addEventListener('touchstart', startTouch);
+    Canvas.addEventListener('touchmove', touch);
 
     return () => {
       Canvas.removeEventListener('mousedown', startPaint);
@@ -115,8 +130,9 @@ const BeachSand = () => {
       Canvas.removeEventListener('mouseleave', exitPaint);
 
       Canvas.removeEventListener('touchstart', startTouch);
+      Canvas.removeEventListener('touchmove', touch);
     };
-  }, [startPaint, paint, exitPaint, startTouch]);
+  }, [startPaint, paint, exitPaint, startTouch, touch]);
 
   return (
     <div>
