@@ -77,6 +77,25 @@ const BeachSand = () => {
     setIsPainting(false);
   }, []);
 
+  // 모바일 부분
+  const startTouch = useCallback((event: TouchEvent) => {
+    event.preventDefault();
+
+    if (!canvasRef.current) {
+      return;
+    }
+    const canvas: HTMLCanvasElement = canvasRef.current;
+
+    var touch = event.touches[0];
+    var mouseEvent = new MouseEvent('mousedown', {
+      clientX: touch.clientX,
+      clientY: touch.clientY,
+    });
+
+    canvas.dispatchEvent(mouseEvent);
+  }, []);
+
+  // 각 이벤트를 묶어주는 부분
   useEffect(() => {
     if (!canvasRef.current) return;
 
@@ -87,13 +106,17 @@ const BeachSand = () => {
     Canvas.addEventListener('mouseup', exitPaint);
     Canvas.addEventListener('mouseleave', exitPaint);
 
+    Canvas.addEventListener('touchstart', startTouch);
+
     return () => {
       Canvas.removeEventListener('mousedown', startPaint);
       Canvas.removeEventListener('mousemove', paint);
       Canvas.removeEventListener('mouseup', exitPaint);
       Canvas.removeEventListener('mouseleave', exitPaint);
+
+      Canvas.removeEventListener('touchstart', startTouch);
     };
-  }, [startPaint, paint, exitPaint]);
+  }, [startPaint, paint, exitPaint, startTouch]);
 
   return (
     <div>
