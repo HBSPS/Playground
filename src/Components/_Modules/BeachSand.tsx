@@ -119,6 +119,14 @@ const BeachSand = () => {
     canvas.dispatchEvent(mouseEvent);
   }, [])
 
+  // 캔버스 지우기
+  const clearCanvas = () => {
+    if (!canvasRef.current) return;
+
+    const canvas: HTMLCanvasElement = canvasRef.current;
+    canvas.getContext('2d')!!.clearRect(0, 0, canvas.width, canvas.height);
+  };
+
   // 각 이벤트를 묶어주는 부분
   useEffect(() => {
     if (!canvasRef.current) return;
