@@ -84,8 +84,8 @@ const BeachSand = () => {
     if (!canvasRef.current) return;
     const canvas: HTMLCanvasElement = canvasRef.current;
 
-    var touch = event.touches[0];
-    var mouseEvent = new MouseEvent('mousedown', {
+    const touch = event.touches[0];
+    const mouseEvent = new MouseEvent('mousedown', {
       clientX: touch.clientX,
       clientY: touch.clientY,
     });
@@ -100,14 +100,24 @@ const BeachSand = () => {
 
     const canvas: HTMLCanvasElement = canvasRef.current;
 
-    var touch = event.touches[0];
-    var mouseEvent = new MouseEvent('mousemove', {
+    const touch = event.touches[0];
+    const mouseEvent = new MouseEvent('mousemove', {
       clientX: touch.clientX,
       clientY: touch.clientY,
     });
 
     canvas.dispatchEvent(mouseEvent);
   }, []);
+
+  const exitTouch = useCallback((event: TouchEvent) => {
+    event.preventDefault();
+
+    if (!canvasRef.current) return;
+
+    const canvas: HTMLCanvasElement = canvasRef.current;
+    const mouseEvent = new MouseEvent('mouseup', {});
+    canvas.dispatchEvent(mouseEvent);
+  }, [])
 
   // 각 이벤트를 묶어주는 부분
   useEffect(() => {
@@ -122,6 +132,7 @@ const BeachSand = () => {
 
     Canvas.addEventListener('touchstart', startTouch);
     Canvas.addEventListener('touchmove', touch);
+    Canvas.addEventListener('touchend', exitTouch);
 
     return () => {
       Canvas.removeEventListener('mousedown', startPaint);
@@ -131,8 +142,9 @@ const BeachSand = () => {
 
       Canvas.removeEventListener('touchstart', startTouch);
       Canvas.removeEventListener('touchmove', touch);
+      Canvas.removeEventListener('touchend', exitTouch);
     };
-  }, [startPaint, paint, exitPaint, startTouch, touch]);
+  }, [startPaint, paint, exitPaint, startTouch, touch, exitTouch]);
 
   return (
     <div>
