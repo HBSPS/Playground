@@ -6,6 +6,7 @@ const DefaultText = styled.p`
   margin-left: 3vw;
   margin-bottom: 5vh;
   margin-top: 5vh;
+  user-select: none;
 
   font-size: 3vh;
   color: white;

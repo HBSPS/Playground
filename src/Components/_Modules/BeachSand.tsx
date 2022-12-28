@@ -1,11 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
+import { Button } from '../_Atoms/Button';
 
 const SandCanvas = styled.canvas`
   background: transparent;
   position: absolute;
   bottom: 0;
-  z-index: 99;
+  z-index: 5;
 `;
 
 interface Coordinate {
@@ -157,6 +158,7 @@ const BeachSand = () => {
   return (
     <div>
       <SandCanvas ref={canvasRef} width={window.innerWidth} height={window.innerHeight * 0.4} />
+      <Button.Sand onClick={clearCanvas}>Wave</Button.Sand>
     </div>
   );
 };

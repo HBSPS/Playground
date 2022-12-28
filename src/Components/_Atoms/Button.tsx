@@ -10,11 +10,18 @@ const DefaultButton = styled.button`
   font-size: 2vh;
   margin-left: 3vw;
   padding: 2vh 3vh;
+  user-select: none;
 `;
 
 const LightB = styled(DefaultButton)`
   color: black;
   background-color: rgba(255, 255, 255, 0.25);
+`;
+
+const SandB = styled(LightB)`
+  position: absolute;
+  bottom: 25vh;
+  z-index: 99;
 `;
 
 interface IProps extends PropsWithChildren {
@@ -31,6 +38,12 @@ const DButton = (props: IProps) => {
   return <DefaultButton onClick={onClick}>{children}</DefaultButton>;
 };
 
+const SandButton = (props: IProps) => {
+  const { children, onClick } = props;
+  return <SandB onClick={onClick}>{children}</SandB>;
+};
+
 export const Button = Object.assign(DButton, {
   Light: LButton,
+  Sand: SandButton,
 });
