@@ -1,7 +1,7 @@
 import { BackGround } from '../_Atoms/BackGround';
 import { Button } from '../_Atoms/Button';
 import HomeLink from '../_Atoms/HomeLink';
-import Wrapper from '../_Atoms/Wrapper';
+import { Wrapper } from '../_Atoms/Wrapper';
 import { PlaygroundText } from '../_Modules/PlaygroundText';
 import useSnowFlake from '../../Hooks/useSnowFlake';
 import SnowFlakes from '../_Modules/SnowFlakes';

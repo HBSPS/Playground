@@ -11,6 +11,7 @@ const HomeButton = styled(Link)`
   top: 3vw;
   background-color: none;
   color: white;
+  z-index: 99;
 `;
 
 interface IProps extends PropsWithChildren {
