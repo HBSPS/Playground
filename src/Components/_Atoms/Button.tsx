@@ -24,6 +24,11 @@ const SandB = styled(LightB)`
   z-index: 99;
 `;
 
+const LightB = styled(DefaultButton)`
+  color: black;
+  background-color: rgba(255, 255, 255, 0.25);
+`;
+
 interface IProps extends PropsWithChildren {
   onClick(event: React.MouseEvent<HTMLButtonElement>): void;
 }
